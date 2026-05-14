@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/grafismo-hero.jpg";
-import { Check, Sparkles, Pencil, Heart, ShieldCheck, Star } from "lucide-react";
+import { Check, Sparkles, Pencil, Heart, ShieldCheck, ThumbsUp } from "lucide-react";
+import avatarCamila from "@/assets/avatar-camila.jpg";
+import avatarJuliana from "@/assets/avatar-juliana.jpg";
+import avatarPatricia from "@/assets/avatar-patricia.jpg";
+import avatarFernanda from "@/assets/avatar-fernanda.jpg";
+import avatarMariana from "@/assets/avatar-mariana.jpg";
+import avatarRodrigo from "@/assets/avatar-rodrigo.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -134,21 +140,43 @@ function Index() {
         <h2 className="text-2xl md:text-4xl font-bold text-center mb-10">
           Quem já usa, aprova
         </h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="max-w-2xl mx-auto space-y-4">
           {[
-            { name: "Camila R.", role: "Professora", text: "Minhas crianças amaram! Vejo a evolução no traçado a cada semana." },
-            { name: "Juliana M.", role: "Mãe do Théo", text: "Meu filho pediu para fazer todos os dias. Material incrível e bonito!" },
-            { name: "Patrícia L.", role: "Pedagoga", text: "Organização perfeita. Economiza horas do meu planejamento." },
-          ].map((t, i) => (
-            <div key={i} className="rounded-2xl border border-border bg-card p-6">
-              <div className="flex gap-1 mb-3">
-                {Array.from({ length: 5 }).map((_, k) => (
-                  <Star key={k} className="h-4 w-4 fill-accent text-accent" />
-                ))}
+            { name: "Camila Ribeiro", avatar: avatarCamila, time: "2 h", text: "Gente, esse material salvou meu planejamento! Minhas crianças amaram e já vejo a evolução no traçado a cada semana 😍❤️", likes: 142, replies: 12 },
+            { name: "Juliana Martins", avatar: avatarJuliana, time: "5 h", text: "Comprei pro meu filho de 4 anos e ele PEDE pra fazer todo dia kkkk tá amando! Recomendo demais 🥰", likes: 98, replies: 8 },
+            { name: "Patrícia Lopes", avatar: avatarPatricia, time: "1 d", text: "Como pedagoga, posso afirmar: a sequência didática é excelente. Economiza horas do meu planejamento semanal. Vale cada centavo!", likes: 76, replies: 5 },
+            { name: "Fernanda Castro", avatar: avatarFernanda, time: "1 d", text: "Sou avó e comprei pra brincar com meu neto nas férias. Que delícia ver ele concentrado e aprendendo brincando 💕", likes: 64, replies: 3 },
+            { name: "Mariana Souza", avatar: avatarMariana, time: "2 d", text: "Já imprimi tudo e encadernei! Qualidade impecável, atividades lindas e bem pensadas. Meus alunos da pré-escola adoraram 👏👏", likes: 53, replies: 7 },
+            { name: "Rodrigo Almeida", avatar: avatarRodrigo, time: "3 d", text: "Minha esposa é professora e ficou apaixonada pelo material. Disse que é um dos melhores que já viu. Compra certa!", likes: 41, replies: 2 },
+          ].map((c, i) => (
+            <div key={i} className="rounded-2xl border border-border bg-card p-4 md:p-5">
+              <div className="flex gap-3">
+                <img
+                  src={c.avatar}
+                  alt={c.name}
+                  width={48}
+                  height={48}
+                  loading="lazy"
+                  className="h-12 w-12 rounded-full object-cover shrink-0"
+                />
+                <div className="flex-1 min-w-0">
+                  <div className="rounded-2xl bg-muted/60 px-4 py-2.5">
+                    <p className="font-semibold text-sm">{c.name}</p>
+                    <p className="text-sm mt-1 leading-relaxed">{c.text}</p>
+                  </div>
+                  <div className="flex items-center gap-4 mt-1.5 px-3 text-xs text-muted-foreground">
+                    <span>{c.time}</span>
+                    <button className="font-semibold hover:underline">Curtir</button>
+                    <button className="font-semibold hover:underline">Responder</button>
+                    <span className="ml-auto inline-flex items-center gap-1">
+                      <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                        <ThumbsUp className="h-2.5 w-2.5" />
+                      </span>
+                      {c.likes}
+                    </span>
+                  </div>
+                </div>
               </div>
-              <p className="text-sm mb-4">"{t.text}"</p>
-              <p className="font-semibold text-sm">{t.name}</p>
-              <p className="text-xs text-muted-foreground">{t.role}</p>
             </div>
           ))}
         </div>
