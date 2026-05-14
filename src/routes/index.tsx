@@ -34,9 +34,6 @@ function Index() {
             <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight tracking-tight">
               Transforme o <span className="text-primary">Grafismo Infantil</span> em uma Jornada Divertida de Alfabetização
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              O material completo que está ajudando milhares de professoras e mães a desenvolver a coordenação motora, o traçado e a pré-escrita das crianças com atividades prontas, lúdicas e progressivas.
-            </p>
           </div>
 
           {/* VSL */}
@@ -154,40 +151,6 @@ function Index() {
               <p className="text-xs text-muted-foreground">{t.role}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Oferta final */}
-      <section className="py-16">
-        <div className="container mx-auto max-w-2xl px-4">
-          <div className="rounded-3xl border-2 border-primary/30 bg-card p-8 md:p-10 text-center shadow-[var(--shadow-soft)]">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary">Oferta Especial de Lançamento</p>
-            <h2 className="text-3xl md:text-4xl font-bold mt-3">
-              Material Completo de Grafismo
-            </h2>
-            <p className="mt-3 text-muted-foreground">Acesso imediato e vitalício a todo o conteúdo + bônus exclusivos.</p>
-
-            <div className="mt-6">
-              <p className="text-muted-foreground line-through">De R$ 197,00</p>
-              <p className="text-5xl md:text-6xl font-extrabold text-primary mt-1">
-                R$ 27<span className="text-2xl">,90</span>
-              </p>
-              <p className="text-sm text-muted-foreground mt-1">ou em até 12x no cartão</p>
-            </div>
-
-            <a
-              href={CHECKOUT_URL}
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl px-8 py-5 text-lg md:text-xl font-bold text-primary-foreground transition-transform hover:scale-[1.02] shadow-[var(--shadow-cta)]"
-              style={{ background: "var(--gradient-cta)" }}
-            >
-              QUERO COMPRAR AGORA
-            </a>
-
-            <div className="mt-6 flex flex-col gap-2 text-sm text-muted-foreground">
-              <span className="inline-flex items-center justify-center gap-2"><ShieldCheck className="h-4 w-4" /> Garantia incondicional de 7 dias</span>
-              <span className="inline-flex items-center justify-center gap-2"><Check className="h-4 w-4 text-success" /> Acesso imediato após a compra</span>
-            </div>
-          </div>
         </div>
       </section>
 
