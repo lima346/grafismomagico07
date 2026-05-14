@@ -46,6 +46,11 @@ function VturbPlayer() {
 }
 
 function Index() {
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+      (window as any).fbq("track", "Purchase", { value: 0.0, currency: "USD" });
+    }
+  }, []);
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Hero + VSL */}
