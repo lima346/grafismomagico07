@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/grafismo-hero.jpg";
-import { Check, Sparkles, Pencil, Heart, ShieldCheck, ThumbsUp, MessageCircle, Share2 } from "lucide-react";
+import { Check, Sparkles, Pencil, Heart, ShieldCheck, ThumbsUp } from "lucide-react";
 import avatarCamila from "@/assets/avatar-camila.jpg";
 import avatarJuliana from "@/assets/avatar-juliana.jpg";
 import avatarPatricia from "@/assets/avatar-patricia.jpg";
