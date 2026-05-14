@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import heroImg from "@/assets/grafismo-hero.jpg";
 import { Check, Sparkles, Pencil, Heart, ShieldCheck, ThumbsUp } from "lucide-react";
 import avatarCamila from "@/assets/avatar-camila.jpg";
@@ -43,17 +44,7 @@ function Index() {
           </div>
 
           {/* VSL */}
-          <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-[var(--shadow-soft)] border border-border bg-card">
-            <video
-              className="w-full h-full object-cover"
-              controls
-              playsInline
-              poster={heroImg}
-            >
-              <source src="" type="video/mp4" />
-              Seu navegador não suporta vídeo.
-            </video>
-          </div>
+          <VturbPlayer />
           <p className="text-center text-sm text-muted-foreground mt-3">
             ▶ Assista ao vídeo até o final para entender como aplicar o método
           </p>
