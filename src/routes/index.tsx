@@ -23,6 +23,28 @@ export const Route = createFileRoute("/")({
 
 const CHECKOUT_URL = "https://checkout.escalepay.com/8188866";
 
+function VturbPlayer() {
+  useEffect(() => {
+    const id = "vturb-player-script-6a05d098f70f7722cd247a67";
+    if (document.getElementById(id)) return;
+    const s = document.createElement("script");
+    s.id = id;
+    s.src =
+      "https://scripts.converteai.net/0a5d8304-0978-49e5-a985-6cea705baa64/players/6a05d098f70f7722cd247a67/v4/player.js";
+    s.async = true;
+    document.head.appendChild(s);
+  }, []);
+  return (
+    <div
+      className="w-full"
+      dangerouslySetInnerHTML={{
+        __html:
+          '<vturb-smartplayer id="vid-6a05d098f70f7722cd247a67" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>',
+      }}
+    />
+  );
+}
+
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
